@@ -22,7 +22,7 @@ const updatePage = (path: string) => {
 </script>
 
 <template>
-  <div class="navbar fixed top-0 items-start z-50" id="NavBar" @mouseenter="hoverNav = true" @mouseleave="hoverNav = false" :class="{'bg-base-300': showNav}">
+  <div class="navbar fixed top-0 items-start z-40" id="NavBar" @mouseenter="hoverNav = true" @mouseleave="hoverNav = false" :class="{'bg-base-300': showNav}">
     <div class="navbar-start">
       <a class="text-xl font-medium px-6 py-2">Jacob Kelly Portfolio</a>
     </div>
@@ -47,7 +47,7 @@ const updatePage = (path: string) => {
       </div>
     </div>
   </div>
-  <div class="drawer drawer-end">
+  <div class="drawer drawer-end z-50">
   <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
   <div class="drawer-side">
     <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
