@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="hero min-h-96 min-w-screen" style="background-image: url(/src/assets/pcb-1.jpg)">
+  <div class="hero min-h-96 min-w-screen" style="background-image: url(https://www.tessolve.com/wp-content/uploads/2022/06/ultimate-guide-pcb.jpg)">
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
       <div class="px-44">

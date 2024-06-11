@@ -18,7 +18,7 @@ const scrollDown = () => {
 </script>
 
 <template>
-  <div class="hero min-h-screen min-w-screen bg-fixed" style="background-image: url(/src/assets/pcb-2.jpeg)">
+  <div class="hero min-h-screen min-w-screen bg-fixed" style="background-image: url(https://www.odu.edu/sites/default/files/program-page/headerimages/electrical-and-computer-engineering-header.jpeg)">
     <div class="hero-overlay bg-opacity-60 size-full"></div>
     <div class="hero-content text-left text-neutral-content min-w-screen">
       <div class="absolute left-0 px-44">

@@ -22,7 +22,7 @@ const updatePage = (path: string) => {
 </script>
 
 <template>
-  <div class="navbar fixed top-0 items-start z-50" id="NavBar" @mouseenter="hoverNav = true" @mouseleave="hoverNav = false" :class="{'bg-base-200': showNav}">
+  <div class="navbar fixed top-0 items-start z-50" id="NavBar" @mouseenter="hoverNav = true" @mouseleave="hoverNav = false" :class="{'bg-base-300': showNav}">
     <div class="navbar-start">
       <a class="text-xl font-medium px-6 py-2">Jacob Kelly Portfolio</a>
     </div>
