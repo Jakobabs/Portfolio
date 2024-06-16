@@ -12,7 +12,7 @@ const props = defineProps({
 const router = useRouter();
 
 const navigate = () => {
-  if (props.path) router.replace('/projects/' + props.path)
+  if (props.path) router.push('/projects/' + props.path)
 }
 </script>
 

@@ -59,7 +59,7 @@ const scrollDown = () => {
       <div class="px-6">
         <h1 class="text-3xl font-bold max-w-80">Jacob Kelly: Electrical & Computer Engineer</h1>
         <p class="py-6 max-w-96">Personally, engineering is not just a career, it's my hobby. I greatly enjoy solving problems and learning new skills to do so. I have completed many personal projects regarding smart home, robotics, electronics, and computer systems. You can look at a few of them
-          <a @click="router.replace('/projects')" class="link link-primary">here</a>.
+          <a @click="router.push('/projects')" class="link link-primary">here</a>.
         </p>
         <h2 class="text-xl font-medium max-w-80">Design tools</h2>
         <p class="py-6 max-w-96">Using Kicad I have created multiple PCBs for my embedded projects along with Autodesk Fusion 360 for CAD and 3D Printing</p>
