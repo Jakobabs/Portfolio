@@ -21,13 +21,13 @@ const scrollDown = () => {
   <div class="hero min-h-screen min-w-screen bg-fixed" style="background-image: url(https://www.odu.edu/sites/default/files/program-page/headerimages/electrical-and-computer-engineering-header.jpeg)">
     <div class="hero-overlay bg-opacity-60 size-full"></div>
     <div class="hero-content text-left text-neutral-content min-w-screen">
-      <div class="absolute left-0 px-44">
+      <div class="absolute left-0 pl-10 md:pl-44">
         <h1 class="mb-5 text-5xl font-bold text-slate-50">Jacob Kelly</h1>
         <h2 class="mb-5 text-slate-100">Electrical & Computer Engineer</h2>
         <Socials :bg="'bg-slate-300'" :gap="'gap-6'" />
       </div>
+      <button @click="scrollDown" class="btn btn-ghost btn-circle absolute bottom-5"><span class="material-symbols-outlined scale-175 text-slate-300">keyboard_arrow_down</span></button>
     </div>
-    <button @click="scrollDown" class="btn btn-ghost btn-circle absolute bottom-5"><span class="material-symbols-outlined scale-175 text-slate-300">keyboard_arrow_down</span></button>
   </div>
   <div class="flex flex-col lg:flex-row justify-center content-center gap-6 bg-base-200 p-8">
     <div class="max-w-80 self-center">

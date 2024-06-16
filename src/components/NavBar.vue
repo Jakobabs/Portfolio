@@ -25,10 +25,10 @@ const updatePage = (path: string) => {
 
 <template>
   <div class="navbar fixed top-0 items-start z-40" id="NavBar" @mouseenter="hoverNav = true" @mouseleave="hoverNav = false" :class="{'bg-base-300': showNav}">
-    <div class="navbar-start">
-      <a class="text-xl font-medium px-1 py-2">Jacob Kelly Portfolio</a>
+    <div class="navbar-center fixed left-0">
+      <a class="text-xl font-medium px-4 py-2">Jacob Kelly's Portfolio</a>
     </div>
-    <div class="navbar-end">
+    <div class="navbar-end fixed right-0">
       <div class="hidden md:contents">
         <ul class="menu fixed top-0 menu-horizontal px-6 ">
           <li @click="updatePage('/home')"><a :class="{active: $route.fullPath == '/home' && showNav}">Home</a></li>
@@ -36,8 +36,8 @@ const updatePage = (path: string) => {
           <li @click="updatePage('/projects')" class="max-w-24"><span class="menu-dropdown-toggle min-w-24 max-w-24" @mouseenter="hoverDrop = true" @mouseleave="hoverDrop = false" :class="{'menu-dropdown-show': hoverDrop, active: $route.fullPath.startsWith('/projects') && showNav, 'cursor-pointer': $route.fullPath.startsWith('/projects/')}">Projects</span>
             <ul class="menu-dropdown p-2 bg-base-100 rounded-box max-w-24" :class="{'menu-dropdown-show': hoverDrop}" @mouseenter="hoverDrop = true" @mouseleave="hoverDrop = false">
               <li @click="updatePage('/projects/theseus')"><a :class="{active: $route.fullPath == '/projects/theseus' && showNav}">Theseus</a></li>
-              <li @click="updatePage('/projects/brp')"><a :class="{active: $route.fullPath == '/projects/brp' && showNav}">BRP</a></li>
-              <li @click="updatePage('/projects/unraid')"><a :class="{active: $route.fullPath == '/projects/unraid' && showNav}">Unraid</a></li>
+              <li @click="updatePage('/projects/battery')"><a :class="{active: $route.fullPath == '/projects/battery' && showNav}">Battery</a></li>
+              <li @click="updatePage('/projects/squirrel-be-gone')"><a :class="{active: $route.fullPath == '/projects/squirrel-be-gone' && showNav}">SBG</a></li>
             </ul>
           </li>
         </ul>
@@ -53,14 +53,14 @@ const updatePage = (path: string) => {
   <input v-model="sidebar" id="drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-side">
     <label for="drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-    <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+    <ul class="menu p-4 w-80 min-h-full bg-base-200 text-xl">
       <li @click="updatePage('/home')"><a :class="{active: $route.fullPath == '/home' && showNav}">Home</a></li>
           <li @click="updatePage('/resume')"><a :class="{active: $route.fullPath == '/resume' && showNav}">Resume</a></li>
-          <li @click="updatePage('/projects')" class="max-w-24"><span class="menu-dropdown-toggle min-w-24 max-w-24" @mouseenter="hoverDrop = true" @mouseleave="hoverDrop = false" :class="{'menu-dropdown-show': hoverDrop, active: $route.fullPath.startsWith('/projects') && showNav, 'cursor-pointer': $route.fullPath.startsWith('/projects/')}">Projects</span>
-            <ul class="menu-dropdown p-2 bg-base-100 rounded-box max-w-24" :class="{'menu-dropdown-show': hoverDrop}" @mouseenter="hoverDrop = true" @mouseleave="hoverDrop = false">
+          <li @click="updatePage('/projects')"><span class="menu-dropdown-toggle min-w-24" @mouseenter="hoverDrop = true" @mouseleave="hoverDrop = false" :class="{'menu-dropdown-show': hoverDrop, active: $route.fullPath.startsWith('/projects') && showNav, 'cursor-pointer': $route.fullPath.startsWith('/projects/')}">Projects</span>
+            <ul class="menu-dropdown p-2 bg-base-100 rounded-box" :class="{'menu-dropdown-show': hoverDrop}" @mouseenter="hoverDrop = true" @mouseleave="hoverDrop = false">
               <li @click="updatePage('/projects/theseus')"><a :class="{active: $route.fullPath == '/projects/theseus' && showNav}">Theseus</a></li>
-              <li @click="updatePage('/projects/brp')"><a :class="{active: $route.fullPath == '/projects/brp' && showNav}">BRP</a></li>
-              <li @click="updatePage('/projects/unraid')"><a :class="{active: $route.fullPath == '/projects/unraid' && showNav}">Unraid</a></li>
+              <li @click="updatePage('/projects/battery')"><a :class="{active: $route.fullPath == '/projects/battery' && showNav}">battery</a></li>
+              <li @click="updatePage('/projects/squirrel-be-gone')"><a :class="{active: $route.fullPath == '/projects/squirrel-be-gone' && showNav}">SBG</a></li>
             </ul>
           </li>
     </ul>
