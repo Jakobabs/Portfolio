@@ -1,11 +1,16 @@
 <script setup lang="ts">
 const props = defineProps({
   title: String,
-})
+});
 </script>
 
 <template>
-  <div class="hero min-h-96 min-w-screen" style="background-image: url(https://www.tessolve.com/wp-content/uploads/2022/06/ultimate-guide-pcb.jpg)">
+  <div
+    class="hero min-h-80 min-w-screen"
+    style="
+      background-image: url(https://www.tessolve.com/wp-content/uploads/2022/06/ultimate-guide-pcb.jpg);
+    "
+  >
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
       <div>

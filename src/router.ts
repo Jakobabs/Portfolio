@@ -6,7 +6,7 @@ import theseus from './pages/subProjects/theseus.vue'
 import ResumePage from './pages/ResumePage.vue'
 
 const routes = [
-  { path: '/', redirect: '/home'},
+  { path: '/', redirect: '/home' },
   { path: '/home', component: HomePage },
   { path: '/resume', component: ResumePage },
   { path: '/projects', component: ProjectsPage },
@@ -15,6 +15,9 @@ const routes = [
 ]
 
 const router = createRouter({
+  scrollBehavior() {
+    return { top: 0 }
+  },
   history: createWebHistory(),
   routes,
 })
