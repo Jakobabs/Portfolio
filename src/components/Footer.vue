@@ -5,13 +5,15 @@ import Socials from "./Socials.vue";
 const scroll = useWindowScroll({ behavior: "smooth" });
 </script>
 <template>
-  <footer class="footer footer-center p-10 bg-primary text-primary-content">
+  <footer
+    class="footer footer-center p-10 bg-secondary bg-opacity-80 text-primary-content"
+  >
     <aside>
       <div class="tooltip" data-tip="To top">
         <button @click="scroll.y.value = 0" class="btn btn-ghost btn-circle">
-          <span class="material-symbols-outlined scale-175 text-black"
-            >keyboard_arrow_up</span
-          >
+          <span class="material-symbols-outlined scale-175 text-black">
+            keyboard_arrow_up
+          </span>
         </button>
       </div>
       <p class="font-bold">

@@ -22,7 +22,8 @@ const navigate = () => {
     class="card w-96 h-30r bg-base-300 shadow-xl cursor-pointer"
   >
     <figure class="w-96 h-68">
-      <img class="self-start" :src="props.src" />
+      <img v-if="props.src !== undefined" class="self-start" :src="props.src" />
+      <div v-else class="skeleton w-80 h-60" />
     </figure>
     <div class="card-body">
       <h2 class="card-title">

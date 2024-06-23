@@ -19,7 +19,7 @@ import ProjectCard from "../components/ProjectCard.vue";
     class="flex flex-row flex-wrap justify-center content-center gap-6 py-14"
   >
     <ProjectCard
-      :badge="1"
+      :badge="2"
       :title="'Theseus'"
       :path="'theseus'"
       :text="'A game launcher which can be used as a CLI, GUI, and a library for creating and playing Modrinth projects.'"
@@ -31,14 +31,12 @@ import ProjectCard from "../components/ProjectCard.vue";
       :title="'Battery Replacer'"
       :text="'Replaces AA/AAA batteries with a recharegable lithium-ion battery with wireless charging support.'"
       :tags="['Circuit', 'PCB Design', 'Solo']"
-      :src="'src/assets/png.png'"
     />
     <ProjectCard
       :badge="2"
       :title="'Squirrel Be Gone'"
       :text="'Smart Turrent that deters rodents using AI. Designed to protect gardens and prevent targeting humans or pets.'"
       :tags="['Computer Vision', 'AI', 'Team']"
-      :src="'src/assets/png.png'"
     />
   </div>
 </template>

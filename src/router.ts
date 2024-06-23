@@ -1,9 +1,9 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
-import HomePage from './pages/HomePage.vue'
-import ProjectsPage from './pages/ProjectsPage.vue'
-import theseus from './pages/subProjects/theseus.vue'
-import ResumePage from './pages/ResumePage.vue'
+const HomePage = () => import('./pages/HomePage.vue')
+const ProjectsPage = () => import('./pages/ProjectsPage.vue')
+const theseus = () => import('./pages/subProjects/theseus.vue')
+const ResumePage = () => import('./pages/ResumePage.vue')
 
 const routes = [
   { path: '/', redirect: '/home' },
@@ -15,8 +15,12 @@ const routes = [
 ]
 
 const router = createRouter({
-  scrollBehavior() {
-    return { top: 0 }
+  scrollBehavior(_to, _from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { top: 0 }
+    }
   },
   history: createWebHistory(),
   routes,

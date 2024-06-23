@@ -115,8 +115,8 @@ const scrollDown = () => {
   <div class="hero px-6 py-8 justify-center bg-base-200">
     <div class="hero-content flex-col lg:flex-row">
       <img
-        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-        class="max-w-sm rounded-lg shadow-2xl self-start"
+        src="/jacobkelly.png"
+        class="w-56 md:w-96 rounded-lg shadow-2xl self-start"
       />
       <div class="px-6">
         <h1 class="text-3xl font-bold max-w-80">
