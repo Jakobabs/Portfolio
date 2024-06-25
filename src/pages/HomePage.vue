@@ -47,8 +47,8 @@ const scrollDown = () => {
     <div class="max-w-80 self-center">
       <h1 class="mb-8 text-4xl font-bold">Eastern Michigan University</h1>
       <p class="mb-3">
-        Currently pursuing a Bachelor of Science Electrical and Computer
-        Engineering. I am expected to graduate December 2024.
+        Currently pursuing a Bachelor of Science in Electrical and Computer
+        Engineering. My expected graduation date is December 2024.
       </p>
       <p>
         Relevant coursework includes: Circuit Analysis, Controls Systems, Power
@@ -70,7 +70,7 @@ const scrollDown = () => {
       <ExperienceCard
         :date="'2020 - Present'"
         :title="'Target Corp.'"
-        :text="'Worked as Service Advocate, Cart Attendant, Drive-Up, and Specialty Sales.'"
+        :text="'Employed as Service Advocate, Cart Attendant, Drive-Up, and Specialty Sales.'"
       />
     </div>
   </div>

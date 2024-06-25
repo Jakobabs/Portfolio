@@ -19,7 +19,7 @@ import ProjectCard from "../components/ProjectCard.vue";
     class="flex flex-row flex-wrap justify-center content-center gap-6 py-14"
   >
     <ProjectCard
-      :badge="2"
+      :badge="1"
       :title="'Theseus'"
       :path="'theseus'"
       :text="'A game launcher which can be used as a CLI, GUI, and a library for creating and playing Modrinth projects.'"
