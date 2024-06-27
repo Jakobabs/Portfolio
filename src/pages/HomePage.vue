@@ -128,7 +128,7 @@ const scrollDown = () => {
           completed many personal projects regarding smart home, robotics,
           electronics, and computer systems. You can look at a few of them
           <a @click="router.push('/projects')" class="link link-primary">here</a
-          >.
+          >. I am FE certified, you can click the badge below for more details.
         </p>
         <h2 class="text-xl font-medium max-w-80">Design tools</h2>
         <p class="py-6 max-w-96">
@@ -137,10 +137,58 @@ const scrollDown = () => {
         </p>
         <h2 class="text-xl font-medium max-w-80">Development skills</h2>
         <p class="py-6 max-w-96">
-          I created a Web App using Tauri and Vue.js. The backend handled data
-          manipulation and concurrent http requests. I also wrote this entire
-          website!
+          I contributed to a Web App using Tauri and Vue.js. The backend handled
+          data manipulation and concurrent http requests. I also wrote this
+          entire website!
         </p>
+        <div class="flex flex-wrap justify-start md:justify-end gap-3">
+          <div class="avatar size-16">
+            <div class="rounded">
+              <img
+                src="https://cdn.icon-icons.com/icons2/2415/PNG/512/html_plain_wordmark_logo_icon_146476.png"
+              />
+            </div>
+          </div>
+          <div class="avatar size-16">
+            <div class="rounded">
+              <img
+                src="https://cdn.icon-icons.com/icons2/2415/PNG/512/css_plain_wordmark_logo_icon_146574.png"
+              />
+            </div>
+          </div>
+        
+          <div class="avatar size-16">
+            <div class="rounded">
+              <img
+                src="https://cdn.icon-icons.com/icons2/2108/PNG/512/javascript_icon_130900.png"
+              />
+            </div>
+          </div>
+          <div class="avatar size-16">
+            <div class="rounded">
+              <img
+                src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_python_icon_130221.png"
+              />
+            </div>
+          </div>
+          <div class="avatar size-16">
+            <div class="rounded">
+              <img
+                src="https://cdn.icon-icons.com/icons2/2699/PNG/512/rust_lang_logo_icon_169776.png"
+              />
+            </div>
+          </div>
+          <a
+            class="avatar size-16 cursor-pointer"
+            href="https://www.credly.com/badges/986ee904-ad02-423e-a217-c6569475a59f/public_url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="rounded">
+              <img src="/fe-exam.png" />
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
