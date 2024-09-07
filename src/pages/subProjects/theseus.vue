@@ -30,7 +30,7 @@ import BlogHeader from "../../components/BlogHeader.vue";
             rel="noopener noreferrer"
             class="link link-primary"
             >modrinth.com/app</a
-          >. Theseus is a web app built using the Tuari framework to provide a
+          >. Theseus is a web app built using the Tauri framework to provide a
           fast frontend with Vue.js, and a powerful backend in Rust.
         </p>
       </div>

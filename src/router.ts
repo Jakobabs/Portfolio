@@ -2,7 +2,8 @@ import { createWebHistory, createRouter } from 'vue-router'
 
 const HomePage = () => import('./pages/HomePage.vue')
 const ProjectsPage = () => import('./pages/ProjectsPage.vue')
-const theseus = () => import('./pages/subProjects/theseus.vue')
+const Theseus = () => import('./pages/subProjects/Theseus.vue')
+const BatteryReplacer = () => import('./pages/subProjects/BatteryReplacer.vue')
 const ResumePage = () => import('./pages/ResumePage.vue')
 
 const routes = [
@@ -10,7 +11,8 @@ const routes = [
   { path: '/home', component: HomePage },
   { path: '/resume', component: ResumePage },
   { path: '/projects', component: ProjectsPage },
-  { path: '/projects/theseus', component: theseus },
+  { path: '/projects/theseus', component: Theseus },
+  { path: '/projects/battery-replacer', component: BatteryReplacer },
   { path: '/:pathMatch(.*)', redirect: '/home' }
 ]
 

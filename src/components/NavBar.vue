@@ -73,10 +73,10 @@ const updatePage = (path: string) => {
                   >Theseus</a
                 >
               </li>
-              <li @click="updatePage('/projects/battery')">
+              <li @click="updatePage('/projects/battery-replacer')">
                 <a
                   :class="{
-                    active: $route.fullPath == '/projects/battery' && showNav,
+                    active: $route.fullPath == '/projects/battery-replacer' && showNav,
                   }"
                   >Battery</a
                 >

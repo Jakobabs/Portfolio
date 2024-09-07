@@ -20,17 +20,19 @@ import ProjectCard from "../components/ProjectCard.vue";
   >
     <ProjectCard
       :badge="1"
+      :title="'Battery Replacer'"
+      :path="'battery-replacer'"
+      :text="'Replaces AA/AAA batteries with a recharegable lithium-ion battery with wireless charging support.'"
+      :tags="['Circuit', 'PCB Design', 'Solo']"
+      :src="'/battery-replacer-v1-pcb.png'"
+    />
+    <ProjectCard
+      :badge="0"
       :title="'Theseus'"
       :path="'theseus'"
       :text="'A game launcher which can be used as a CLI, GUI, and a library for creating and playing Modrinth projects.'"
       :tags="['Full Stack', 'Contributor']"
       :src="'https://cdn-raw.modrinth.com/app-landing/app-screenshot.webp'"
-    />
-    <ProjectCard
-      :badge="2"
-      :title="'Battery Replacer'"
-      :text="'Replaces AA/AAA batteries with a recharegable lithium-ion battery with wireless charging support.'"
-      :tags="['Circuit', 'PCB Design', 'Solo']"
     />
     <ProjectCard
       :badge="2"
