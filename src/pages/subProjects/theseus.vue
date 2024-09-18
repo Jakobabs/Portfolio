@@ -18,12 +18,12 @@ import BlogHeader from "../../components/BlogHeader.vue";
         <p class="indent-8 text-lg leading-relaxed">
           Theseus (publicly known as Modrinth App) is an open source launcher
           for the popular game, Minecraft. Theseus provides a powerful
-          alternative to the original (Mojang) launcher, focusing on its
-          modding support. Integrating with Modrinth's mod hosting website, it
-          allows users to install Minecraft mods from within the launcher, all
-          from the click of a button. The Modrinth Team's focus on performance,
-          along with an attractive UI, makes Theseus the optimal choice for
-          Minecraft modding. You can check it out at
+          alternative to the original (Mojang) launcher, focusing on its modding
+          support. Integrating with Modrinth's mod hosting website, it allows
+          users to install Minecraft mods from within the launcher, all from the
+          click of a button. The Modrinth Team's focus on performance, along
+          with an attractive UI, makes Theseus the optimal choice for Minecraft
+          modding. You can check it out at
           <a
             href="https://modrinth.com/app"
             target="_blank"
@@ -50,10 +50,10 @@ import BlogHeader from "../../components/BlogHeader.vue";
           Mojang launcher, and installing mods was far less time consuming. But,
           there was one issue I found: Theseus lacked the option to change your
           player's skin. This feature is Minecraft's way to modify the look of
-          your character which is a feature I enjoyed from the Mojang launcher. After
-          finding out that there were no current plans to add this feature, I
-          contacted the Modrinth Team and received permission to develop the
-          feature.
+          your character which is a feature I enjoyed from the Mojang launcher.
+          After finding out that there were no current plans to add this
+          feature, I contacted the Modrinth Team and received permission to
+          develop the feature.
         </p>
       </div>
       <div class="divider" />
@@ -130,30 +130,30 @@ import BlogHeader from "../../components/BlogHeader.vue";
           </div>
         </div>
         <p class="indent-8 text-lg py-3 leading-relaxed">
-          Setting the player's skin is similar to the above code block, with the png image base64
-          encoded into a JSON multipart. When saving skins I decided on storing
-          them in a JSON file, with the base64 encoded skin, 3D render of the
-          skin, and a name. This method has its advantages, where the 3D render
-          is displayed to the end user to allow them to switch between saved
-          skins and JSON allows fast parsing to get the stored skin and send it
-          to the API.
+          Setting the player's skin is similar to the above code block, with the
+          png image base64 encoded into a JSON multipart. When saving skins I
+          decided on storing them in a JSON file, with the base64 encoded skin,
+          3D render of the skin, and a name. This method has its advantages,
+          where the 3D render is displayed to the end user to allow them to
+          switch between saved skins and JSON allows fast parsing to get the
+          stored skin and send it to the API.
         </p>
         <div class="flex justify-center py-6">
           <img class="max-w-xs md:max-w-2xl" :src="'/theseus1.png'" />
         </div>
         <p class="indent-8 text-lg py-3 leading-relaxed">
-          The above image shows the skin manager UI page where the leftmost
-          skin is the user's current skin and the others are the saved skins.
-          Left clicking a skin card sends the http request to the API which
-          contains the base64 encoded image shown in the 3D renderer. Right clicking shows a
-          context menu that allows the user to modify or delete the save. Above
-          the skins are search, sort, and filter options. In addition to the skin
-          manager, I created a system to allow users to set a custom order in
-          which their saved skins are displayed. This feature originally was
-          supposed to support drag-n-drop with the cards to reorder them, but
-          due to an issue with EdgeView2, which Tauri uses, drag-n-drop is
-          incompatible. This feature may be implemented once the upstream bug
-          gets resolved.
+          The above image shows the skin manager UI page where the leftmost skin
+          is the user's current skin and the others are the saved skins. Left
+          clicking a skin card sends the http request to the API which contains
+          the base64 encoded image shown in the 3D renderer. Right clicking
+          shows a context menu that allows the user to modify or delete the
+          save. Above the skins are search, sort, and filter options. In
+          addition to the skin manager, I created a system to allow users to set
+          a custom order in which their saved skins are displayed. This feature
+          originally was supposed to support drag-n-drop with the cards to
+          reorder them, but due to an issue with EdgeView2, which Tauri uses,
+          drag-n-drop is incompatible. This feature may be implemented once the
+          upstream bug gets resolved.
         </p>
         <div class="flex justify-center py-6">
           <img class="max-w-xs md:max-w-2xl" :src="'/theseus2.png'" />
@@ -170,9 +170,10 @@ import BlogHeader from "../../components/BlogHeader.vue";
           block above.
         </p>
         <p class="indent-8 text-lg py-3 leading-relaxed">
-          Currently the project is in its final stages, where I am working with
-          the Modrinth Team to merge my fork into the master branch. I'll update
-          this post when we have accomplished this.
+          *Updated* The fork is complete, and I am waiting on the Modrinth team
+          to review and merge the code. Currently the team is busy working on a
+          redesign for the app, and the skin manager will be added when that is
+          complete.
         </p>
       </div>
       <div class="divider" />
