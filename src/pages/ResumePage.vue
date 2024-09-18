@@ -1,25 +1,80 @@
 <script setup lang="ts">
-import Header from "../components/Header.vue";
+import { onMounted, onUnmounted, ref } from "vue";
+
+const width = ref(850);
+const height = ref(1125);
+
+const rem = (rem: number) => {
+  return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+};
+
+const resized = () => {
+  const view = document.getElementsByClassName("view")[0];
+  const w = view.clientWidth - rem(14);
+  const h = view.clientHeight - rem(13);
+
+  const hr = (w * 1125) / 850;
+  const wr = (h * 850) / 1125;
+
+  if (hr > h) {
+    if (h > 1125) {
+      height.value = 1125;
+      width.value = 850;
+    } else {
+      height.value = h;
+      width.value = wr;
+    }
+  } else {
+    if (w > 850) {
+      height.value = 1125;
+      width.value = 850;
+    } else {
+      height.value = hr;
+      width.value = w;
+    }
+  }
+};
+
+const open = (path: string) => {
+  window.open(path);
+};
+
+onMounted(() => {
+  window.addEventListener("resize", resized);
+  resized();
+});
+onUnmounted(() => window.removeEventListener("resize", resized));
 </script>
 
 <template>
-  <Header :title="'Resume'" />
-  <div class="hero py-24 bg-base-200 md:hidden">
-    <div class="hero-content flex-col">
-      <p class="text-xl font-medium text-center">
-        You are either on mobile or your screen is way too small! You can check
-        it out here: <br /><a
-          class="link"
-          href="https://docs.google.com/document/d/1Rk0e9NRgYgwPOp6_VzqJkpX2S7GPBteyFywuFPsclsA/edit?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          https://docs.google.com/
-        </a>
-      </p>
-    </div>
-  </div>
-  <div class="hero justify-center my-6 hidden md:hero">
-    <object class="pdf" width="850" height="1125" data="/resume.pdf" />
+  <object
+    v-if="height >= 465 && width >= 351"
+    class="pdf"
+    :width="width"
+    :height="height"
+    data="/resume.pdf"
+  />
+  <div v-else class="message">
+    <button
+      @click="open('https://jacobkelly.dev/resume.pdf')"
+      class="btn btn-info"
+    >
+      Download Resume
+    </button>
   </div>
 </template>
+
+<style scoped>
+.pdf {
+  margin-top: 2rem;
+  align-self: center;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+</style>

@@ -1,24 +1,13 @@
 <script setup lang="ts">
-import { useWindowSize, useWindowScroll } from "@vueuse/core";
 import ExperienceCard from "../components/ExperienceCard.vue";
 import Skillcard from "../components/SkillCard.vue";
-import Socials from "../components/Socials.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const windowSize = useWindowSize();
-const scroll = useWindowScroll({ behavior: "smooth" });
-
-const scrollDown = () => {
-  const navbar = document.getElementById("NavBar");
-  let offset: number = windowSize.height.value;
-  if (navbar !== null) offset -= navbar.clientHeight;
-  scroll.y.value = offset;
-};
 </script>
 
 <template>
-  <div class="flex flex-row justify-center content-center gap-6 p-8">
+  <div class="flex flex-col justify-center content-center gap-6 p-8">
     <div class="max-w-80 self-center">
       <h1 class="mb-8 text-4xl font-bold">Eastern Michigan University</h1>
       <p class="mb-3">
@@ -41,12 +30,12 @@ const scrollDown = () => {
       :text="'University club focused on engineering topics and principles. Worked on group projects.'"
     />
   </div>
-  <div class="hero py-16">
+  <div class="hero">
     <div class="hero-content flex-col">
       <h1 class="mb-8 text-4xl font-bold text-center">
         Key skills and experience
       </h1>
-      <p class="mb-3 text-xl font-medium text-center max-w-4xl">
+      <p class="mb-3 text-xl font-medium text-center">
         I started learning programming in 2016. Since then I have learned many
         languages, including: Rust, Embedded C, Python, HTML, JavaScript, CSS,
         and Java. In University I learned about inductors, capacitors,
@@ -79,7 +68,6 @@ const scrollDown = () => {
       :text="'Experience with Object Detection models using ML and DNNs.'"
     />
   </div>
-  <div class="divider"></div>
   <div class="hero px-6 py-8 justify-center">
     <div class="hero-content flex-col lg:flex-row">
       <img
@@ -146,6 +134,16 @@ const scrollDown = () => {
               />
             </div>
           </div>
+          <a
+            class="avatar size-16 cursor-pointer"
+            href="https://www.credly.com/badges/986ee904-ad02-423e-a217-c6569475a59f/public_url"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="rounded">
+              <img src="/fe-exam.png" />
+            </div>
+          </a>
         </div>
       </div>
     </div>

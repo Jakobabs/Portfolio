@@ -1,12 +1,23 @@
 <script setup lang="ts">
-import NavBar from "./components/NavBar.vue";
-import Footer from "./components/Footer.vue";
+import { defineAsyncComponent, onMounted, onUnmounted } from "vue";
+import { isMobile } from "./helpers/vars.ts";
+
+const Desktop = defineAsyncComponent(() => import("./Desktop.vue"));
+const Mobile = defineAsyncComponent(() => import("./Mobile.vue"));
+
+const resized = () => {
+  isMobile.value = document.documentElement.clientWidth <= 760;
+};
+
+onMounted(() => {
+  window.addEventListener("resize", resized);
+  resized();
+});
+onUnmounted(() => window.removeEventListener("resize", resized));
 </script>
 
 <template>
-  <NavBar />
-  <RouterView />
-  <Footer />
+  <component :is="isMobile ? Mobile : Desktop" />
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"

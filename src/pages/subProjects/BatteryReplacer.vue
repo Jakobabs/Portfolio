@@ -52,9 +52,7 @@ import BlogHeader from "../../components/BlogHeader.vue";
           uses two series AA batteries. To get wireless charging, connect a Qi
           receiver to the 5V in pin.
         </p>
-        <div
-          class="flex flex-col xl:flex-row justify-center items-center gap-6 py-6"
-        >
+        <div class="flex flex-col justify-center items-center gap-6 py-6">
           <div class="flex flex-col">
             <img
               class="max-w-xs md:max-w-xl"
@@ -108,9 +106,7 @@ import BlogHeader from "../../components/BlogHeader.vue";
           draw falls below a threshold, it terminates the Qi connection. I chose
           the STWLC68JRH Qi receiver for this design.
         </p>
-        <div
-          class="flex flex-col xl:flex-row justify-center items-center gap-6 py-6"
-        >
+        <div class="flex flex-col justify-center items-center gap-6 py-6">
           <div class="flex flex-col">
             <img class="max-w-xs md:max-w-xl" />
             <p class="text-center italic p-2">

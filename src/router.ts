@@ -1,19 +1,23 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
-const HomePage = () => import('./pages/HomePage.vue')
-const ProjectsPage = () => import('./pages/ProjectsPage.vue')
+const DesktopAbout = () => import('./pages/HomePage.vue')
+const DesktopProjects = () => import('./pages/ProjectsPage.vue')
 const Theseus = () => import('./pages/subProjects/Theseus.vue')
 const BatteryReplacer = () => import('./pages/subProjects/BatteryReplacer.vue')
 const ResumePage = () => import('./pages/ResumePage.vue')
 
+const MobileAbout = () => import('./mobilePages/HomePage.vue')
+const MobileProjects = () => import('./pages/ProjectsPage.vue')
+const MobileResume = () => import('./mobilePages/ResumePage.vue')
+
 const routes = [
-  { path: '/', redirect: '/home' },
-  { path: '/home', component: HomePage },
-  { path: '/resume', component: ResumePage },
-  { path: '/projects', component: ProjectsPage },
+  { path: '/', redirect: '/about' },
+  { path: '/about', components: { default: DesktopAbout, Mobile: MobileAbout } },
+  { path: '/resume', components: { default: ResumePage, Mobile: MobileResume } },
+  { path: '/projects', components: { default: DesktopProjects, Mobile: MobileProjects } },
   { path: '/projects/theseus', component: Theseus },
   { path: '/projects/battery-replacer', component: BatteryReplacer },
-  { path: '/:pathMatch(.*)', redirect: '/home' }
+  { path: '/:pathMatch(.*)', redirect: '/about' }
 ]
 
 const router = createRouter({

@@ -12,26 +12,25 @@ const props = defineProps({
 const router = useRouter();
 
 const navigate = () => {
-  if (props.path) router.push("/projects/" + props.path);
+  if (props.path)
+    router.push({ path: "/projects", query: { blog: props.path } });
 };
 </script>
 
 <template>
   <div
     @click="navigate"
-    class="card w-96 h-30r bg-base-300 shadow-xl cursor-pointer"
+    class="card w-80 h-28r bg-base-300 shadow-xl cursor-pointer"
   >
-    <figure class="w-96 h-68">
+    <figure class="w-80 h-60">
       <img v-if="props.src !== undefined" class="self-start" :src="props.src" />
       <div v-else class="skeleton w-80 h-60" />
     </figure>
-    <div class="card-body">
+    <div class="card-body pt-2">
       <h2 class="card-title">
         {{ props.title }}
         <div v-if="props.badge == 1" class="badge badge-primary">NEW</div>
-        <div v-if="props.badge == 2" class="badge badge-warning">
-          Under Construction
-        </div>
+        <div v-if="props.badge == 2" class="badge badge-warning">WIP</div>
       </h2>
       <p>{{ props.text }}</p>
       <div class="card-actions justify-end">
@@ -42,3 +41,12 @@ const navigate = () => {
     </div>
   </div>
 </template>
+
+<style scoped>
+.card {
+  transition: transform 0.25s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+</style>

@@ -1,13 +1,26 @@
 <script setup lang="ts">
-import Header from "../components/Header.vue";
+import { onMounted, ref } from "vue";
 import ProjectCard from "../components/ProjectCard.vue";
+import Modal from "../components/Modal.vue";
+import { onBeforeRouteUpdate, useRouter } from "vue-router";
+
+const router = useRouter();
+const modal = ref();
+
+const handleRoute = (route: any) => {
+  if (route.query.blog == undefined) return;
+  modal.value.show(route.query.blog);
+};
+
+onBeforeRouteUpdate((route) => handleRoute(route));
+
+onMounted(() => handleRoute(router.currentRoute.value));
 </script>
 
 <template>
-  <Header :title="'Projects'" />
-  <div class="hero py-24 bg-base-200">
+  <div class="hero pt-16">
     <div class="hero-content flex-col">
-      <p class="text-xl font-medium text-center">
+      <p class="text-xl font-medium text-center max-w-4xl">
         Below are some of the projects that I am most proud of. They range from
         open-source contributions, to personal or school projects. All work is
         either my own, or done in a team, with the other members credited to
@@ -21,24 +34,25 @@ import ProjectCard from "../components/ProjectCard.vue";
     <ProjectCard
       :badge="1"
       :title="'Battery Replacer'"
-      :path="'battery-replacer'"
-      :text="'Replaces AA/AAA batteries with a recharegable lithium-ion battery with wireless charging support.'"
+      :text="'Replaces AA/AAA batteries with a rechargeable lithium-ion battery with wireless charging support.'"
       :tags="['Circuit', 'PCB Design', 'Solo']"
+      :path="'BatteryReplacer'"
       :src="'/battery-replacer-v1-pcb.png'"
     />
     <ProjectCard
       :badge="0"
       :title="'Theseus'"
-      :path="'theseus'"
       :text="'A game launcher which can be used as a CLI, GUI, and a library for creating and playing Modrinth projects.'"
       :tags="['Full Stack', 'Contributor']"
+      :path="'Theseus'"
       :src="'https://cdn-raw.modrinth.com/app-landing/app-screenshot.webp'"
     />
     <ProjectCard
       :badge="2"
       :title="'Squirrel Be Gone'"
-      :text="'Smart Turrent that deters rodents using AI. Designed to protect gardens and prevent targeting humans or pets.'"
+      :text="'Smart Turret that deters rodents using AI. Designed to protect gardens and prevent targeting humans or pets.'"
       :tags="['Computer Vision', 'AI', 'Team']"
     />
   </div>
+  <Modal ref="modal" />
 </template>
