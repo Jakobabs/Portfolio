@@ -12,8 +12,7 @@ const props = defineProps({
 const router = useRouter();
 
 const navigate = () => {
-  if (props.path)
-    router.push({ path: "/projects", query: { blog: props.path } });
+  if (props.path) router.push("/projects/" + props.path);
 };
 </script>
 

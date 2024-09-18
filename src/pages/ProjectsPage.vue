@@ -8,8 +8,8 @@ const router = useRouter();
 const modal = ref();
 
 const handleRoute = (route: any) => {
-  if (route.query.blog == undefined) return;
-  modal.value.show(route.query.blog);
+  if (route.params.project.length <= 0) return;
+  modal.value.show(route.params.project);
 };
 
 onBeforeRouteUpdate((route) => handleRoute(route));
@@ -36,7 +36,7 @@ onMounted(() => handleRoute(router.currentRoute.value));
       :title="'Battery Replacer'"
       :text="'Replaces AA/AAA batteries with a rechargeable lithium-ion battery with wireless charging support.'"
       :tags="['Circuit', 'PCB Design', 'Solo']"
-      :path="'BatteryReplacer'"
+      :path="'battery-replacer'"
       :src="'/battery-replacer-v1-pcb.png'"
     />
     <ProjectCard
@@ -44,7 +44,7 @@ onMounted(() => handleRoute(router.currentRoute.value));
       :title="'Theseus'"
       :text="'A game launcher which can be used as a CLI, GUI, and a library for creating and playing Modrinth projects.'"
       :tags="['Full Stack', 'Contributor']"
-      :path="'Theseus'"
+      :path="'theseus'"
       :src="'https://cdn-raw.modrinth.com/app-landing/app-screenshot.webp'"
     />
     <ProjectCard

@@ -5,14 +5,13 @@ const DesktopProjects = () => import('./pages/ProjectsPage.vue')
 const ResumePage = () => import('./pages/ResumePage.vue')
 
 const MobileAbout = () => import('./pages/MobileHome.vue')
-const MobileProjects = () => import('./pages/ProjectsPage.vue')
 const MobileResume = () => import('./pages/MobileResume.vue')
 
 const routes = [
   { path: '/', redirect: '/about' },
   { path: '/about', components: { default: DesktopAbout, Mobile: MobileAbout } },
   { path: '/resume', components: { default: ResumePage, Mobile: MobileResume } },
-  { path: '/projects', components: { default: DesktopProjects, Mobile: MobileProjects } },
+  { path: '/projects/:project?', components: { default: DesktopProjects, Mobile: DesktopProjects } },
   { path: '/:pathMatch(.*)', redirect: '/about' }
 ]
 
