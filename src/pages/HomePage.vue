@@ -1,20 +1,9 @@
 <script setup lang="ts">
-import { useWindowSize, useWindowScroll } from "@vueuse/core";
 import ExperienceCard from "../components/ExperienceCard.vue";
 import Skillcard from "../components/SkillCard.vue";
-import Socials from "../components/Socials.vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const windowSize = useWindowSize();
-const scroll = useWindowScroll({ behavior: "smooth" });
-
-const scrollDown = () => {
-  const navbar = document.getElementById("NavBar");
-  let offset: number = windowSize.height.value;
-  if (navbar !== null) offset -= navbar.clientHeight;
-  scroll.y.value = offset;
-};
 </script>
 
 <template>
