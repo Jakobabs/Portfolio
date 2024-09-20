@@ -74,6 +74,7 @@ import NavBar from "./components/NavBar.vue";
   height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
