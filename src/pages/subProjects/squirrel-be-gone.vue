@@ -66,6 +66,7 @@ import BlogHeader from "../../components/BlogHeader.vue";
           </div>
           <div class="flex flex-col">
             <iframe
+              class="hidden lg:flex"
               width="640"
               height="480"
               src="https://drive.google.com/file/d/1uMvMhtq2KSb0WBgAtDzsoQAQDSTUdE4Y/preview"
