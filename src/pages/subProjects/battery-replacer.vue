@@ -78,14 +78,14 @@ import BlogHeader from "../../components/BlogHeader.vue";
         </p>
         <ul class="pl-12 text-lg pt-3 leading-relaxed">
           <li>
-            1. The battery charger IC does not communicate with the wireless
-            charging module, so the Qi receiver still requests power, when none
-            is needed, leading to access energy waste.
-          </li>
-          <li>
-            2. The LDO outputs a fixed voltage, so the device thinks the battery
+            1. The LDO outputs a fixed voltage, so the device thinks the battery
             is always at ~60%, leading to the device turning off without
             warning.
+          </li>
+          <li>
+            2. The battery charger IC does not communicate with the wireless
+            charging module, so the Qi receiver still requests power, when none
+            is needed, leading to access energy waste.
           </li>
         </ul>
         <p class="indent-8 text-lg pt-3 leading-relaxed">
@@ -97,24 +97,34 @@ import BlogHeader from "../../components/BlogHeader.vue";
           voltage divider followed by a unity gain buffer amp. This allowed me
           to use a high resistance divider to minimize power loss, while still
           providing current to the device. I chose the TLV9041 for it's low
-          quiescent current. With a resistive divider of 400kΩ + 600kΩ, the
+          quiescent current (Iq). With a resistive divider of 400kΩ + 600kΩ, the
           total Iq is 14.2 uA, 16.8 uA less than V1!
         </p>
         <p class="indent-8 text-lg pt-3 leading-relaxed">
-          Issue #2 had a very simple solution. Instead of purchasing a Qi
-          receiver module, I would design my own module so that if the current
-          draw falls below a threshold, it terminates the Qi connection. I chose
-          the STWLC68JRH Qi receiver for this design.
+          Issue #2 at first seemed like a simple fix, I would just design my own
+          Qi receiver in the battery replacer PCB. Unfortunately I found that
+          the battery charger would not output if it needed to charge when Vin
+          is not present. This would mean that I would have to add a battery
+          fuel gauge and some logic components, greatly increasing PCB size and
+          quiescent current. I decided to not address this issue for the battery
+          replacer PCB and instead address it in the future when I design my own
+          mouse.
         </p>
         <div class="flex flex-col justify-center items-center gap-6 py-6">
           <div class="flex flex-col">
-            <img class="max-w-xs md:max-w-xl" />
+            <img
+              class="max-w-xs md:max-w-xl"
+              :src="'/battery-replacer-v2.png'"
+            />
             <p class="text-center italic p-2">
               AA Battery Replacer V2 Schematic
             </p>
           </div>
           <div class="flex flex-col">
-            <img class="max-w-xs md:max-w-xl" />
+            <img
+              class="max-w-xs md:max-w-xl"
+              :src="'/battery-replacer-v2-pcb.png'"
+            />
             <p class="text-center italic p-2">AA Battery Replacer V2 PCB</p>
           </div>
         </div>
