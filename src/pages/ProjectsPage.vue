@@ -33,6 +33,14 @@ onMounted(() => handleRoute(router.currentRoute.value));
   >
     <ProjectCard
       :badge="1"
+      :title="'Squirrel Be Gone'"
+      :text="'Smart Turret that deters rodents using AI. Designed to protect gardens and prevent targeting humans or pets.'"
+      :tags="['Computer Vision', 'AI', 'Team']"
+      :path="'squirrel-be-gone'"
+      :src="'/squirrel-detect.png'"
+    />
+    <ProjectCard
+      :badge="0"
       :title="'Battery Replacer'"
       :text="'Replaces AA/AAA batteries with a rechargeable lithium-ion battery with wireless charging support.'"
       :tags="['Circuit', 'PCB Design', 'Solo']"
@@ -49,9 +57,9 @@ onMounted(() => handleRoute(router.currentRoute.value));
     />
     <ProjectCard
       :badge="2"
-      :title="'Squirrel Be Gone'"
-      :text="'Smart Turret that deters rodents using AI. Designed to protect gardens and prevent targeting humans or pets.'"
-      :tags="['Computer Vision', 'AI', 'Team']"
+      :title="'Audion'"
+      :text="'Audio mixing and routing with hardware support. Designed for content creators who need more control over their audio.'"
+      :tags="['Full Stack', 'Audio', 'Solo']"
     />
   </div>
   <Modal ref="modal" />
